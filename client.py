@@ -55,7 +55,7 @@ async def send_images():
 
                 # Отправляем пару изображений на второй сервер
                 with open(file1_path, "rb") as file1, open(file2_path, "rb") as file2:
-                    data = {"image_name": files1[i], "image_name_2": files2[i]}  # Используем имя первого изображения для уникальности
+                    data = {"image_name": files1[i], "image_name_2": files2[i]}
                     start_time = time.time()  # Засекаем время передачи
                     response = await client.post(second_server_url, files={"file1": file1, "file2": file2}, data=data)
                     end_time = time.time()  # Засекаем время завершения передачи
